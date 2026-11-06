@@ -3,22 +3,75 @@
     <head>
         <title> Contact Page </title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Eater&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
     </head>
+
     <body>
-        <header>
-    <a href="index.html"><img src="images/theater-masks-solid.png" alt="mask logo"></a>
-        <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+        <header class="main-header">
+            <div></div>
+            <a href="index.html" class="logo">
+                <img src="images/theater-masks-brown.png" alt="mask logo">
+            </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="portfolio.html">PORTFOLIO</a></li>
+            </ul>
+        </nav>
+
         </header>
-    <body>
-    <body>
-        <h1> Contact Page </h1>
+
+        <div class="home-banner">
+            <h1> Contact Page </h1>
+        </div>
+
+        <main class="content">
+            <div class="row">
+                <div class="card">
+                    <h2>Get in touch</h2>
+                    <p>Contact me via e-mail</p>
+                    <p class="contact-email"><a href="mailto:me@example.com">me@example.com</a></p>
+                    <p>You can also contact me via phone</p>
+                    <p class="contact-phone">Phone: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <h2>Contact Form</h2>
+                    <form id="contact-form" action="submit_form.php" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message:</label>
+                        <textarea cols="40" rows="4" id="message" name="message" required></textarea>
+                        <div class="row">
+                            <button type="submit">Send</button>
+                            <button type="reset">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="main-footer">
+            <nav class="social-links">
+                <ul>
+                    <li><a href="https://www.facebook.com/" target="_blank"><img src="images/facebook.svg" alt="Facebook"></a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><img src="images/instagram.svg" alt="Instagram"></a></li>
+                    <li><a href="https://x.com/" target="_blank"><img src="images/twitter.svg" alt="X (Twitter)"></a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank"><img src="images/youtube.svg" alt="YouTube"></a></li>
+                </ul>
+            </nav>
+            <p> &copy; My Favourite Foods. All rights reserved. Gabriel Moreira 2026.</p>
+        </footer>
     </body>
 </html>
