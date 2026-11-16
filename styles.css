@@ -56,6 +56,20 @@ a {
     padding: 10px 20px;
     background-color: rgb(212, 148, 148);
 }
+#nav-button {
+    display: none; /* only shown on small screens (see responsive.css) */
+    align-self: center;
+    background: transparent;
+    color: brown;
+    font-size: 36px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+#nav-button:hover {
+    color: orange;
+    transform: scale(1.1);
+}
 .main-nav ul a{
     font-family: "Bungee", sans-serif;
     list-style: none;
@@ -66,6 +80,7 @@ a {
     color: black;
     text-decoration: none;
     border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 .main-nav ul a:hover {
     color: orange;
@@ -242,8 +257,15 @@ button[type="submit"], button[type="reset"] {
     border-radius: 4px;
     cursor: pointer;
     min-width: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 button[type="submit"]:hover, button[type="reset"]:hover {
     background-color: rgb(140, 70, 70);
+    color: orange;
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:active, button[type="reset"]:active {
+    transform: translateY(0);
 }
