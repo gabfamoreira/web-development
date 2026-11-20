@@ -17,7 +17,20 @@
         transition: max-height 0.3s ease;
     }
     .main-nav ul.open {
-        max-height: 300px; /* shows the menu when the button is clicked (script.js) */
+        max-height: 500px; /* shows the menu when the button is clicked (script.js) */
+    }
+    /* On phones the Portfolio options are listed under PORTFOLIO instead of floating */
+    .main-nav .dropdown-menu {
+        display: flex;
+        position: static;
+        max-height: none;
+        min-width: 100%;
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .main-nav .dropdown-menu a {
+        font-size: 0.85em;
     }
 
     .main-nav ul a {

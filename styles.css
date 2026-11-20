@@ -35,6 +35,8 @@ a {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     display: grid;
+    overflow-x: hidden;
+    overflow-y: scroll;
  }
 
  body {
@@ -93,6 +95,30 @@ a {
     gap: 30px;
 
 }
+
+/* Portfolio dropdown: a layer that appears below the PORTFOLIO tab */
+.main-nav .dropdown {
+    position: relative; /* the menu is positioned relative to this tab */
+}
+.main-nav .dropdown-menu {
+    display: none; /* hidden until the tab is hovered */
+    position: absolute; /* floats on top of the page as a layer */
+    top: 100%;
+    left: 0;
+    z-index: 100;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 8px;
+    min-width: 180px;
+    background-color: rgb(212, 148, 148);
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.main-nav .dropdown:hover .dropdown-menu,
+.main-nav .dropdown:focus-within .dropdown-menu {
+    display: flex; /* shows the options when hovering or tabbing with the keyboard */
+}
 img {
     max-width: 100%;
     height: auto;
@@ -120,6 +146,61 @@ img {
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     color: bisque;
+}
+
+.slide {
+    position: relative;
+    width: 100%; /* one slide = full carousel width (100vw caused a sideways overflow from the scrollbar) */
+    height: 80vh;
+    min-height: 420px;
+    max-height: 760px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    color: orange;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-family: "Bungee", sans-serif;
+    background-size: cover; /* every photo fills the same slide area */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(212, 148, 148);
+}
+
+/* dark fade at the bottom so the text stays readable on the photos */
+.slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0) 55%);
+}
+.slide h2 {
+    position: relative; /* sits above the fade */
+    margin: 0;
+    padding: 0 20px;
+}
+
+/* background-position keeps the faces in view when cover crops the photo */
+.one {
+    background-image: url('images/slide-1.jpg');
+    background-position: center 55%;
+}
+.two {
+    background-image: url('images/slide-2.jpg');
+    background-position: center 70%;
+}
+.three {
+    background-image: url('images/slide-3.jpg');
+    background-position: center 50%;
+}
+.four {
+    background-image: url('images/slide-4.jpg');
+    background-position: center 70%;
+}
+.five {
+    background-image: url('images/slide-5.jpg');
+    background-position: center 50%;
 }
 
 .content {
@@ -191,27 +272,39 @@ footer {
 
 /* Contact Form */
 #contact-form {
+    display: flex;
     flex-direction: column;
-    gap: 10px;
-    flex: 1;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 6px;
+    text-align: left;
 }
 
-#contact label {
+#contact-form label {
     display: block;
-    margin-bottom: 5px;
+    margin-top: 8px;
     font-weight: bold;
 }
 
-#contact input, #contact textarea {
+#contact-form input, #contact-form textarea {
     width: 100%;
+    box-sizing: border-box; /* padding stays inside, so every field has the same width */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font: inherit;
+}
+
+#contact-form textarea {
+    resize: vertical; /* only grows downwards, never wider than the other fields */
+}
+
+#contact-form .row {
+    justify-content: center;
+    gap: 1em;
+    margin-top: 12px;
+}
+
+#contact-form .row button {
+    flex: 1; /* Send and Cancel get the same width */
 }
 
 .card {

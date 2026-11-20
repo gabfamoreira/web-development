@@ -10,7 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Eater&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <link rel ="stylesheet" href="responsive.css">
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <script src="script.js" defer></script>
     </head>
 
@@ -27,7 +29,13 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
+                <li class="dropdown">
+                    <a href="portfolio.html">PORTFOLIO</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="drawings.html">DRAWINGS</a></li>
+                        <li><a href="animations.html">ANIMATIONS</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
        
@@ -62,9 +70,27 @@
         <a href="https://my.gov.au/">Government</a>
         <br> -->
 
-        <div class="home-banner">
+        <!-- <div class="home-banner">
             <h1> Welcome to my website</h1>
-        </div>
+        </div> -->
+
+        <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true, "autoPlay": 5000, "wrapAround": true, "pauseAutoPlayOnHover": false }'>
+            <div class="slide one">
+                <h2> I LOVE YOU SHANAE CAITLYN LEANNE ODONOVAN </h2>
+            </div>
+            <div class="slide two">
+                <h2> I MISS YOU A LOT MINHA FLOR </h2>
+            </div>
+            <div class="slide three">
+                <h2> MUITAS SAUDADES MINHA VIDA </h2>
+            </div>
+             <div class="slide four">
+                <h2> YOU ARE THE BEST THING THAT HAPPENED IN MY LIFE </h2>
+            </div>
+             <div class="slide five">
+                <h2> EU TE AMO MIL MILHOES </h2>
+            </div>
+                    </div>
 
         <main class="content">
             <div class="row">
